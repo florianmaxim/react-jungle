@@ -1,2 +1,5 @@
-# 2
-Server Rendering
+# 1
+babel
+webpack
+react
+express
