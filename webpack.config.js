@@ -6,7 +6,7 @@ module.exports = {
 
   entry: {
     app: path.join(__dirname, '/src/public'),
-    vendor: ['react', ]
+    vendor: ['react', 'react-router-dom']
   },
 
   output: {
@@ -31,10 +31,6 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity,
       filename: '[name].js',
-    }),
-    new HtmlWebpackPlugin({
-      title: 'app',
-      inject: 'body'
     })
   ]
 }

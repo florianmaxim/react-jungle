@@ -14,10 +14,8 @@ const DEFAULT = {
   _PORT: 8000
 }
 
-// app.get('/', function(req, res) {
-//   res.redirect('/hi');
-// });
-
+//If it there is anything serveable in here: serve it.
+//Note: If the index route doesn't work look if there's an index file in here...
 app.use('/', express.static(path.resolve(__dirname, 'public')));
 
 app.get('*', (req, res) => {

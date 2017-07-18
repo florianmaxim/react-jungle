@@ -12,6 +12,6 @@ export default class Module2 extends React.Component {
   }
 
   render(){
-    return <div>Bye</div>
+    return <div>Bye {this.props.match.params.name!==undefined?this.props.match.params.name:'Nobody'}</div>
   }
 }
