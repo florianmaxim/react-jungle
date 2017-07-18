@@ -1,6 +1,9 @@
 import React from 'react';
 
 import Module from './Module';
+import Module2 from './Module2';
+
+import {Route, Switch} from 'react-router';
 
 export default class App extends React.Component {
   constructor(props){
@@ -8,6 +11,13 @@ export default class App extends React.Component {
   }
 
   render(){
-    return <div>App<Module/></div>
+    return(
+      <Switch>
+        <Route exact path="/" component={Module}/>
+        <Route path="/hi" component={Module}/>
+        <Route path="/bye" component={Module2}/>
+        <Route path="/*" component={Module}/>
+      </Switch>
+    );
   }
 }

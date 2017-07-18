@@ -1,13 +1,48 @@
-const path = require('path');
+import path from 'path';
 
-const express = require('express');
+import express from 'express';
+
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import { StaticRouter, Route } from 'react-router';
+
+import App from './public/App';
+
 const app = express();
 
 const DEFAULT = {
   _PORT: 8000
 }
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/', function(req, res) {
+//   res.redirect('/hi');
+// });
+
+app.use('/', express.static(path.resolve(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+
+  const context = {}
+
+  const html = ReactDOMServer.renderToString(
+    <StaticRouter
+      location={req.url}
+      context={context}
+    >
+      <App/>
+    </StaticRouter>
+  )
+
+  if (context.url) {
+    res.writeHead(301, {
+      Location: context.url
+    })
+    res.end()
+  } else {
+    res.write(`<!doctype html><html><head></heady><body><div id="app">${html}</div><script src="/vendor.js"></script><script src="/bundle.js"></script></body></html>`)
+    res.end()
+  }
+})
 
 app.listen(DEFAULT._PORT, ()=>{
   console.log(`Listening on port ${DEFAULT._PORT}...`)

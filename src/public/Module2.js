@@ -1,17 +1,17 @@
 import React from 'react';
 
-export default class Module extends React.Component {
+export default class Module2 extends React.Component {
   constructor(props){
     super(props);
   }
 
   componentDidMount(){
     addEventListener('click', (event)=>{
-      alert('hello')
+      alert('goodbye')
     })
   }
 
   render(){
-    return <div>Hi</div>
+    return <div>Bye</div>
   }
 }
