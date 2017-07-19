@@ -16,6 +16,7 @@ module.exports = {
     output: {
       filename: '[name].js',
       path: path.join(__dirname, './lib/public'),
+      //Needed for absolute path, which are required if using routes
       publicPath:'/'
     },
 
