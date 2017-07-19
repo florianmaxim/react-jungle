@@ -1,10 +1,13 @@
 # boilerplate-react
-## 3
+## 4
 -babel
 -webpack
 -webpack-dev-server
 -react
 -express
+
+-static files
+-scss bundling
 
 ```javascript
 "scripts": {

@@ -1,5 +1,7 @@
 require('babel-register');
 
+import './styles/index.scss';
+
 import React from 'react';
 
 import ReactDOM from 'react-dom';
@@ -17,5 +19,4 @@ ReactDOM.render((
 //Needs to sit in the main entry file
 if(module.hot) {
   module.hot.accept();
-  console.log(module);
 }
