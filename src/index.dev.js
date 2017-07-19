@@ -1,5 +1,5 @@
 const DEFAULT = {
-  _PORT: 8000
+  _PORT: 8080
 }
 
 const path = require('path');
@@ -17,7 +17,7 @@ const WebpackDevServerConfig = {
   }
 };
 
-const server = new WebpackDevServer(webpack(webpackConfig), WebpackDevServerConfig);
+const app = new WebpackDevServer(webpack(webpackConfig), WebpackDevServerConfig);
 
 app.listen(DEFAULT._PORT, ()=>{
   console.log(`Listening on port ${DEFAULT._PORT}...`)

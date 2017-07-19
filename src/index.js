@@ -11,7 +11,7 @@ import App from './public/App';
 const app = express();
 
 const DEFAULT = {
-  _PORT: 8000
+  _PORT: 8080
 }
 
 //If it there is anything serveable in here: serve it.
