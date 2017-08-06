@@ -7,16 +7,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
+import Routes from './Routes';
 
 ReactDOM.render((
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>
+
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
+
 ), document.getElementById('app'));
 
-//Required for using hot module replacement (comes by webpack-dev-server)
+//Required for using hot module replacement (comes width webpack-dev-server)
 //Needs to sit in the main entry file
 if(module.hot) {
-  module.hot.accept();
+   module.hot.accept();
 }

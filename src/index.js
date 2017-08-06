@@ -6,7 +6,13 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, Route } from 'react-router';
 
-import App from './public/App';
+import App from './public/components/App';
+
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import allReducers from './public/reducers';
+
+const store = createStore(allReducers);
 
 const app = express();
 
@@ -23,12 +29,14 @@ app.get('*', (req, res) => {
   const context = {}
 
   const html = ReactDOMServer.renderToString(
-    <StaticRouter
-      location={req.url}
-      context={context}
-    >
-      <App/>
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter
+        location={req.url}
+        context={context}
+      >
+        <App/>
+      </StaticRouter>
+    </Provider>
   )
 
   if (context.url) {
