@@ -1,10 +1,12 @@
 # boilerplate-react
-## 4
+## 5
 -babel
 -webpack
 -webpack-dev-server
--react
 -express
+-react-router
+-react-redux
+-redux
 
 -static files
 -scss bundling
