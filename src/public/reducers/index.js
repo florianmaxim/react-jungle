@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import ReducerApples       from './reducer-apples';
-import ReducerApplesActive from './reducer-apples-active';
+import ReducerAppleActive from './reducer-apple-active';
 
 const allReducers = combineReducers({
     apples: ReducerApples,
-    applesActive: ReducerApplesActive
+    appleActive: ReducerAppleActive
 });
 
 export default allReducers

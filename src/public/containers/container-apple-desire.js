@@ -24,7 +24,7 @@ function props(state){
 
   return {
 
-      apple: state.applesActive
+      apple: state.appleActive
   }
 
 }
