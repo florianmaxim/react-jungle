@@ -1,8 +1,35 @@
+*{
+  box-sizing:border-box;
+}
+
 body{
   background-color: blue;
   color: red;
+  margin: 0;
 }
 
 a{
   color: red;
+}
+
+.app{
+  width: 100vw;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-direction: column;
+
+  border: 5px solid red;
+}
+
+.app-item{
+  width: 100vw;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-direction: row;
+
+  border: 5px solid red;
 }

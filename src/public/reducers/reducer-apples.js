@@ -23,7 +23,7 @@ export default function () {
             id: 3,
             name: 'I am big.',
             secret: 'I am afraid of small guys.',
-            desire: 'I wnat to shrink.'
+            desire: 'I want to shrink.'
         }
     ]
 }
