@@ -1,0 +1,9 @@
+{
+  "port": 8888,
+  "scripts": [],
+  "title": "title",
+
+  "api": {
+    "url": "http://localhost:5000"
+  }
+}
