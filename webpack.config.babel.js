@@ -49,7 +49,7 @@ export default {
       }),
 
       new htmlWebpackPlugin({
-        title: 'sacasy',
+        title: 'florianmaxim',
         favicon: path.join(__dirname, '/src/public/static/images/favicon.ico')
       })
     ,

@@ -11,7 +11,9 @@
   "author": "Florian Maxim <hello@florianmaxim.com> (http://florianmaxim.com)",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
@@ -24,12 +26,12 @@
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.6.0",
-    "axios": "^0.16.2"
+    "webpack": "^3.6.0"
   }
 }
