@@ -1,4 +1,6 @@
-# React-Jungle - "Mango" 🥭
+# React-Jungle
+
+## Mango
 
 🙈  Making Your Way Through The React Jungle With Simple Boilerplates ⚔
 
