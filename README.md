@@ -1,6 +1,6 @@
-# Boilerplate-react ✨ 
+# React-Jungle - "Mango" 🥭
 
-🙈 ⚔ Making Your Way Through The React Jungle With Logical Boilerplates ⚛️
+🙈  Making Your Way Through The React Jungle With Simple Boilerplates ⚔
 
 # Requirements
 
