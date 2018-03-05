@@ -18,6 +18,8 @@ import allReducers from './public/reducers';
 
 import App from './public/App';
 
+import HTMLDocument from './HTMLDocument';
+
 const store = createStore(allReducers);
 
 const app = express();
@@ -30,7 +32,7 @@ app.get('*', (req, res) => {
 
   const sheet = new ServerStyleSheet();
 
-  const html = ReactDOMServer.renderToString(
+  const appRenderedToString = ReactDOMServer.renderToString(
     
     sheet.collectStyles(
 
@@ -46,7 +48,7 @@ app.get('*', (req, res) => {
     )
   );
 
-  const styles = sheet.getStyleTags();
+  const stylesRenderedToCSS = sheet.getStyleTags();
 
   if(context.url){
     res.writeHead(301, {
@@ -56,9 +58,17 @@ app.get('*', (req, res) => {
   
   }else{
 
-    res.write(`<!doctype html><html><head><title></title>${styles}</head><body><div id="root">${html}</div><script src="/bundle.js"></script></body></html>`)
+    res.header('Content-Type', 'text/html');
+    res.write(new HTMLDocument({
+      head: {
+        title: config.info.name,
+        styles: stylesRenderedToCSS, 
+      },
+      body: {
+        root: appRenderedToString
+      }
+    }).getDocument());
     res.end();
-    
   }
   
 });
