@@ -1,4 +1,3 @@
-
 export default class HTMLDocument {
 
     constructor(props){
@@ -9,6 +8,16 @@ export default class HTMLDocument {
         this.document += `<meta charset="utf-8"/>`;
         this.document += `<title>${props.head.title}</title>`;
         this.document += `${props.head.styles}`;
+
+        this.document += `<link rel="icon" type="image/png" href="static/favicon.png">`; 
+
+        this.document += `<meta name="apple-mobile-web-app-title" content="${props.head.title}">`;
+
+        this.document += `<link rel="apple-touch-icon" href="static/favicon.png">`;
+        this.document += `<link rel="apple-touch-icon" sizes="152x152" href="static/favicon-152.png">`;
+        this.document += `<link rel="apple-touch-icon" sizes="180x180" href="static/favicon-180.png">`;
+        this.document += `<link rel="apple-touch-icon" sizes="167x167" href="static/favicon-167.png">`;
+
         this.document += `</head>`;        
         this.document += `<body>`;
         this.document += `<div id="root">${props.body.root}</div>`;
