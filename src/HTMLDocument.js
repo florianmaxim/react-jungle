@@ -5,13 +5,18 @@ export default class HTMLDocument {
         this.document  = `<!doctype html>`;
         this.document  = `<html>`;
         this.document += `<head>`;
-        this.document += `<meta charset="utf-8"/>`;
+
         this.document += `<title>${props.head.title}</title>`;
         this.document += `${props.head.styles}`;
 
-        this.document += `<link rel="icon" type="image/png" href="static/favicon.png">`; 
+        this.document += `<meta charset="utf-8"/>`;
+        this.document += `<meta name="viewport" content="initial-scale=1, maximum-scale=1">`;
 
         this.document += `<meta name="apple-mobile-web-app-title" content="${props.head.title}">`;
+        this.document += `<meta name="apple-mobile-web-app-capable" content="yes">`;
+        this.document += `<meta name="apple-mobile-web-app-status-bar-style" content="black">`;
+
+        this.document += `<link rel="icon" type="image/png" href="static/favicon.png">`; 
 
         this.document += `<link rel="apple-touch-icon" href="static/favicon.png">`;
         this.document += `<link rel="apple-touch-icon" sizes="152x152" href="static/favicon-152.png">`;
