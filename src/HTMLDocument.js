@@ -10,7 +10,7 @@ export default class HTMLDocument {
         this.document += `${props.head.styles}`;
 
         this.document += `<meta charset="utf-8"/>`;
-        this.document += `<meta name="viewport" content="initial-scale=1, maximum-scale=1">`;
+        this.document += `<meta name="viewport" content="initial-scale=1, maximum-scale=1, ser-scalable=no">`;
 
         this.document += `<meta name="apple-mobile-web-app-title" content="${props.head.title}">`;
         this.document += `<meta name="apple-mobile-web-app-capable" content="yes">`;
