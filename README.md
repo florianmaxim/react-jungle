@@ -1,8 +1,10 @@
-# React-Jungle
+# React boilerplate
 
-## Mango
+## Apricot (October 28)
 
-🙈  Making Your Way Through The React Jungle With Simple Boilerplates ⚔
+- Redux
+- Routes
+- SSR
 
 # Requirements
 
@@ -10,31 +12,23 @@
 
 # Installation
 
-## Configuration
-
-# Usage
-
-## Run
-
-### Develop
-
 ```javascript
-npm run dev
+git clone https://github.com/florianmaxim/react-jungle -b
+cd react-jungle
+npm install
 ```
-
-### Build
+# Usage
 
 ```javascript
 npm run build
-``` 
-
-### Start
-
-```javascript
-npm start
+npm run dev
+npm run start
 ```
 
-Browse to **[localhost:8080](http://localhost:8080)**.
+# Configuration
+```javascript
+config.json
+```
 
 # License
 
