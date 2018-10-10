@@ -1,7 +1,6 @@
 import * as config from '../config.json';
 import chalk from 'chalk';
 
-import { createServer } from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 

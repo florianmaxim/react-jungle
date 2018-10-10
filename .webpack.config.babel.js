@@ -6,6 +6,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const UglifyJsPlugin    = require('uglifyjs-webpack-plugin')
 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
 
   entry: {
@@ -21,11 +23,17 @@ module.exports = {
 
     rules: [
       {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
+
   },
 
   plugins: [
@@ -36,16 +44,15 @@ module.exports = {
     }]),
 
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
 
-/*     
-    new UglifyJsPlugin({
-      sourceMap: true
-    }) 
-*/
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/public/index.html'),
+      filename: 'index.html'
+    }),
+    
+    new webpack.optimize.UglifyJsPlugin()
 
   ]
 

@@ -1,4 +1,4 @@
-onst path = require('path');
+const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -24,25 +24,19 @@ module.exports = {
 
     module: {
 
-      loaders: [
+      rules: [
         {
-          test: /\.(js)$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          query: {
-            cacheDirectory: true,
-          },
-        },
-        {
-          test: /\.(scss|css)$/,
-            loaders:
-              [
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-              ]
-        },
-      ],
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        }
+      ]
+
     },
 
     plugins: [

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { hydrate } from "react-dom";
+import ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
 
 import {Provider} from 'react-redux';
@@ -9,7 +9,9 @@ import store from './store';
 
 import App from './App';
 
-hydrate((
+const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate;
+
+renderMethod((
 
   <Provider store={store}>
 
